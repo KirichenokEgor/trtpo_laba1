@@ -86,6 +86,28 @@ public class Complex {
     }
 
     /**
+     * Divide operation.
+     * @param  b dividor
+     * @return this Complex object whose value is this / b
+     */
+    public Complex divides(Complex b) {
+        Complex a = this;
+        double real = (a.re * b.re + a.im * b.im)/(b.re*b.re + b.im*b.im);
+        double imag = (b.re*a.im - b.im*a.re)/(b.re*b.re + b.im*b.im);
+        re = real;
+        im = imag;
+        return this;
+    }
+
+    /**
+     * Cosine operation.
+     * @return this Complex object whose value is cos(this)
+     */
+    public Complex cos() {
+        return new Complex(Math.cos(re) * Math.cosh(im), -Math.sin(re) * Math.sinh(im));
+    }
+
+    /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
      * @return square of length
