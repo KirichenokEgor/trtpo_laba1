@@ -107,6 +107,13 @@ public class Complex {
         return new Complex(Math.cos(re) * Math.cosh(im), -Math.sin(re) * Math.sinh(im));
     }
 
+    /** @param b
+     * @return true if a = b
+     */
+    public boolean isEqual(Complex b) {
+        return (this.getIm() == b.getIm() && this.getRe() == b.getRe());
+    }
+
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
@@ -114,5 +121,13 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
     }
 }
